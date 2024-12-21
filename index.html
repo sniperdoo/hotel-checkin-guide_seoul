@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Check-in Guide</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-3xl mx-auto p-6 mt-10">
+        <!-- Language Selection -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-bold mb-2">Select Language</h1>
+                <p class="text-gray-600">언어 선택 / 言語選択 / 选择语言</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="showGuide('en')" class="lang-btn p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 shadow-lg">
+                    <p class="text-xl font-bold">English</p>
+                    <p class="text-sm text-gray-300 mt-1">영어 / 英語 / 英语</p>
+                </button>
+                <button onclick="showGuide('kr')" class="lang-btn p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 shadow-lg">
+                    <p class="text-xl font-bold">한국어</p>
+                    <p class="text-sm text-gray-300 mt-1">Korean / 韓国語 / 韩语</p>
+                </button>
+                <button onclick="showGuide('jp')" class="lang-btn p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 shadow-lg">
+                    <p class="text-xl font-bold">日本語</p>
+                    <p class="text-sm text-gray-300 mt-1">Japanese / 일본어 / 日语</p>
+                </button>
+                <button onclick="showGuide('cn')" class="lang-btn p-6 bg-gray-800 text-white rounded-lg hover:bg-gray-700 shadow-lg">
+                    <p class="text-xl font-bold">中文</p>
+                    <p class="text-sm text-gray-300 mt-1">Chinese / 중국어 / 中国語</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- Language Content Sections -->
+        [여기에 각 언어 버전의 컨텐츠가 들어갑니다]
+    </div>
+
+    <script>
+        function showGuide(lang) {
+            // Hide all guides
+            document.querySelectorAll('[id^="guide-"]').forEach(el => el.classList.add('hidden'));
+            
+            // Show selected guide
+            document.getElementById('guide-' + lang).classList.remove('hidden');
+            
+            // Smooth scroll to content
+            document.getElementById('guide-' + lang).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Show English by default
+        document.getElementById('guide-en').classList.remove('hidden');
+    </script>
+</body>
+</html>
+<!-- English Version -->
+<div id="guide-en" class="hidden">
+    <div class="bg-gray-800 text-white p-6 rounded-t-lg">
+        <h2 class="text-2xl font-bold text-center">SELF CHECK-IN/OUT GUIDE</h2>
+        <p class="text-center mt-2">Use the kiosk machine at the entrance</p>
+    </div>
+
+    <div class="bg-white rounded-b-lg shadow-lg p-6">
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <p>• Use self check-in/out kiosk at entrance</p>
+            <p>• Staff assistance 09:00 AM ~ 11:00 PM</p>
+            <p class="text-red-600">• No staff available after 11:00 PM</p>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">HOW TO CHECK-IN</h3>
+        
+        <div class="space-y-6">
+            <!-- Step 01 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 01. Select Language</h4>
+                <div class="mt-2 bg-gray-100 p-2 rounded flex items-center justify-between">
+                    <span>English</span>
+                    <div class="w-4 h-4 bg-gray-800 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 02. Select "Check-in"</h4>
+                <button class="mt-2 bg-gray-800 text-white px-4 py-2 rounded">Check-in</button>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 03. Search your Booking</h4>
+                <p class="text-sm mt-2">Search using either name or booking number:</p>
+                
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">Option 1: Search by First name or Last name or Full name</p>
+                    <p class="text-sm mt-2">Example:</p>
+                    <p class="text-sm">First name: JOHN    Last name: SMITH</p>
+                    <p class="text-red-600 text-sm">*Enter 4 more letters</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">Option 2: Search by Last 4 Digits of Reservation Number</p>
+                    <p class="text-sm mt-2">Example:</p>
+                    <p class="text-sm">Agoda: XXXXXX5735    Booking: XXXXXX5735</p>
+                </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 04. Verify and Get Key Card</h4>
+                <p class="mt-2">1. Check if your name is correct</p>
+                <p>2. Press "Next" to receive your key card</p>
+                <p>3. Check your Room Number on screen and receipt</p>
+            </div>
+        </div>
+
+        <!-- Key Card Usage -->
+        <div class="mt-6 space-y-6">
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">KEY CARD USAGE</h4>
+                <p class="mt-2">• Use to open entrance glass door</p>
+                <p>• Use to unlock your room door</p>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold text-red-600">IMPORTANT</h4>
+                <p class="text-red-600 mt-2">• Key card loss: KRW 10,000 charge</p>
+                <p class="text-red-600">• Lost after 11 PM: Check-in next morning</p>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="bg-gray-700 text-white rounded-lg p-4">
+                <h4 class="font-bold">EMERGENCY CONTACT (After 11:00 PM)</h4>
+                <p class="mt-2">+82 10-8623-2894  OR  +82 10-2456-5002</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Korean Version -->
+<div id="guide-kr" class="hidden">
+    <div class="bg-gray-800 text-white p-6 rounded-t-lg">
+        <h2 class="text-2xl font-bold text-center">셀프 체크인/아웃 안내</h2>
+        <p class="text-center mt-2">입구의 키오스크를 이용해주세요</p>
+    </div>
+
+    <div class="bg-white rounded-b-lg shadow-lg p-6">
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <p>• 입구 키오스크에서 셀프 체크인/아웃</p>
+            <p>• 직원 지원 시간: 오전 9시 ~ 오후 11시</p>
+            <p class="text-red-600">• 오후 11시 이후 직원 부재</p>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">체크인 방법</h3>
+        
+        <div class="space-y-6">
+            <!-- Step 01 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 01. 언어 선택</h4>
+                <div class="mt-2 bg-gray-100 p-2 rounded flex items-center justify-between">
+                    <span>한국어</span>
+                    <div class="w-4 h-4 bg-gray-800 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 02. "체크인" 선택</h4>
+                <button class="mt-2 bg-gray-800 text-white px-4 py-2 rounded">체크인</button>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 03. 예약 검색</h4>
+                <p class="text-sm mt-2">이름 또는 예약번호로 검색:</p>
+                
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">옵션 1: 이름으로 검색</p>
+                    <p class="text-sm mt-2">예시:</p>
+                    <p class="text-sm">이름: JOHN    성: SMITH</p>
+                    <p class="text-red-600 text-sm">*4글자 이상 입력</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">옵션 2: 예약번호 뒤 4자리로 검색</p>
+                    <p class="text-sm mt-2">예시:</p>
+                    <p class="text-sm">아고다: XXXXXX5735    부킹: XXXXXX5735</p>
+                </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 04. 확인 및 카드키 수령</h4>
+                <p class="mt-2">1. 예약자 이름 확인</p>
+                <p>2. "Next" 버튼을 눌러 카드키 수령</p>
+                <p>3. 화면과 영수증의 객실 번호 확인</p>
+            </div>
+        </div>
+
+        <div class="mt-6 space-y-6">
+            <!-- Key Card Usage -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">카드키 사용</h4>
+                <p class="mt-2">• 입구 유리문 개폐용</p>
+                <p>• 객실 도어락 개폐용</p>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold text-red-600">주의사항</h4>
+                <p class="text-red-600 mt-2">• 카드키 분실 시 비용: 10,000원</p>
+                <p class="text-red-600">• 오후 11시 이후 분실 시 다음날 아침 체크인</p>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="bg-gray-700 text-white rounded-lg p-4">
+                <h4 class="font-bold">긴급연락처 (오후 11시 이후)</h4>
+                <p class="mt-2">+82 10-8623-2894  또는  +82 10-2456-5002</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Japanese Version -->
+<div id="guide-jp" class="hidden">
+    <div class="bg-gray-800 text-white p-6 rounded-t-lg">
+        <h2 class="text-2xl font-bold text-center">セルフチェックイン/アウト案内</h2>
+        <p class="text-center mt-2">入口のキオスクをご利用ください</p>
+    </div>
+
+    <div class="bg-white rounded-b-lg shadow-lg p-6">
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <p>• 入口のキオスクでセルフチェックイン/アウト</p>
+            <p>• スタッフ対応時間：午前9時 ~ 午後11時</p>
+            <p class="text-red-600">• 午後11時以降スタッフ不在</p>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">チェックイン方法</h3>
+        
+        <div class="space-y-6">
+            <!-- Step 01 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 01. 言語選択</h4>
+                <div class="mt-2 bg-gray-100 p-2 rounded flex items-center justify-between">
+                    <span>日本語</span>
+                    <div class="w-4 h-4 bg-gray-800 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 02. "チェックイン"を選択</h4>
+                <button class="mt-2 bg-gray-800 text-white px-4 py-2 rounded">チェックイン</button>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 03. 予約検索</h4>
+                <p class="text-sm mt-2">名前または予約番号で検索：</p>
+                
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">オプション1：名前で検索</p>
+                    <p class="text-sm mt-2">例：</p>
+                    <p class="text-sm">名：JOHN    姓：SMITH</p>
+                    <p class="text-red-600 text-sm">*4文字以上入力してください</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">オプション2：予約番号下4桁で検索</p>
+                    <p class="text-sm mt-2">例：</p>
+                    <p class="text-sm">Agoda：XXXXXX5735    Booking：XXXXXX5735</p>
+                </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 04. 確認とカードキー受け取り</h4>
+                <p class="mt-2">1. 予約者名の確認</p>
+                <p>2. "Next"ボタンを押してカードキーを受け取る</p>
+                <p>3. 画面と領収書の部屋番号を確認</p>
+            </div>
+        </div>
+
+        <div class="mt-6 space-y-6">
+            <!-- Key Card Usage -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">カードキーの使用方法</h4>
+                <p class="mt-2">• 入口のガラスドアの開閉</p>
+                <p>• 客室ドアの開閉</p>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold text-red-600">重要事項</h4>
+                <p class="text-red-600 mt-2">• カードキー紛失時：10,000ウォン請求</p>
+                <p class="text-red-600">• 午後11時以降の紛失：翌朝までチェックイン不可</p>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="bg-gray-700 text-white rounded-lg p-4">
+                <h4 class="font-bold">緊急連絡先（午後11時以降）</h4>
+                <p class="mt-2">+82 10-8623-2894  または  +82 10-2456-5002</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chinese Version -->
+<div id="guide-cn" class="hidden">
+    <div class="bg-gray-800 text-white p-6 rounded-t-lg">
+        <h2 class="text-2xl font-bold text-center">自助办理入住/退房指南</h2>
+        <p class="text-center mt-2">请使用入口处的自助服务机</p>
+    </div>
+
+    <div class="bg-white rounded-b-lg shadow-lg p-6">
+        <div class="bg-gray-50 p-4 rounded-lg mb-6">
+            <p>• 在入口处自助服务机办理入住/退房</p>
+            <p>• 工作人员服务时间：上午9点 ~ 晚上11点</p>
+            <p class="text-red-600">• 晚上11点后无工作人员</p>
+        </div>
+
+        <h3 class="text-xl font-bold mb-4">入住步骤</h3>
+        
+        <div class="space-y-6">
+            <!-- Step 01 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 01. 选择语言</h4>
+                <div class="mt-2 bg-gray-100 p-2 rounded flex items-center justify-between">
+                    <span>中文</span>
+                    <div class="w-4 h-4 bg-gray-800 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 02. 选择"入住"</h4>
+                <button class="mt-2 bg-gray-800 text-white px-4 py-2 rounded">入住</button>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 03. 搜索预订</h4>
+                <p class="text-sm mt-2">使用姓名或预订号搜索：</p>
+                
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">选项1：按姓名搜索</p>
+                    <p class="text-sm mt-2">示例：</p>
+                    <p class="text-sm">名字：JOHN    姓氏：SMITH</p>
+                    <p class="text-red-600 text-sm">*请输入4个以上字母</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg mt-2">
+                    <p class="font-bold">选项2：使用预订号后4位搜索</p>
+                    <p class="text-sm mt-2">示例：</p>
+                    <p class="text-sm">Agoda：XXXXXX5735    Booking：XXXXXX5735</p>
+                </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">Step 04. 确认并领取房卡</h4>
+                <p class="mt-2">1. 确认预订人姓名</p>
+                <p>2. 按"Next"按钮领取房卡</p>
+                <p>3. 确认屏幕和收据上的房间号</p>
+            </div>
+        </div>
+
+        <div class="mt-6 space-y-6">
+            <!-- Key Card Usage -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold">房卡使用说明</h4>
+                <p class="mt-2">• 用于开关入口玻璃门</p>
+                <p>• 用于开关房间门锁</p>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="border rounded-lg p-4">
+                <h4 class="font-bold text-red-600">重要提示</h4>
+                <p class="text-red-600 mt-2">• 房卡丢失费用：10,000韩元</p>
+                <p class="text-red-600">• 晚上11点后丢失：需等到次日早晨办理</p>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="bg-gray-700 text-white rounded-lg p-4">
+                <h4 class="font-bold">紧急联系方式（晚上11点后）</h4>
+                <p class="mt-2">+82 10-8623-2894  或  +82 10-2456-5002</p>
+            </div>
+        </div>
+    </div>
+</div>
